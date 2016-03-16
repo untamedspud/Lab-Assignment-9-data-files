@@ -10,10 +10,30 @@ void test_wordcount( void );
 
 int main()
 {
+
+#ifdef DEBUG_ON
+        puts( "Running tests on the strstrcnt() function." );
+#endif
         test_strstrcnt();
+
+
+#ifdef DEBUG_ON
+        puts( "Running tests on the substrcntcase() function." );
+#endif
         test_substrcntcase();
+
+
+#ifdef DEBUG_ON
+        puts( "Running tests on the wordcount() function." );
+#endif
         test_wordcount();
+
+
+#ifdef DEBUG_ON
+        puts( "Running tests on the incrementstring() function." );
+#endif
         test_incrementstring();
+
 
         return EXIT_SUCCESS;
 }
@@ -45,7 +65,10 @@ void test_strstrcnt( void )
 
         int test_index = 0;
         int count = 0;
+
+#ifdef DEBUG_ON
         puts( "Testing test_strstrcnt():\n" );
+#endif
 
         while ( test_cases[ test_index ] != NULL ) {
                 printf( "    %d. testing strstrcnt( %s, %s )... ", 
@@ -75,7 +98,10 @@ void test_substrcntcase( void )
 
         int test_index = 0;
         int count = 0;
+
+#ifdef DEBUG_ON
         puts( "Testing test_substrcntcase():\n" );
+#endif
 
         while ( test_cases[ test_index ] != NULL ) {
                 printf( "    %d. testing substrcntcase( %s, %s )... ", 
@@ -93,6 +119,7 @@ void test_substrcntcase( void )
         }
         
         printf( "\n%d tests run.\n\n\n", count );
+
         return;
 }
 
@@ -104,7 +131,9 @@ void test_wordcount( void )
         int i = 0;
         int answer;
 
+#ifdef DEBUG_ON
         puts( "Testing wordcount():\n" );
+#endif
 
         while ( test_cases[ i ] != NULL ) {
                 answer = wordcount( test_cases[i] );
@@ -131,7 +160,9 @@ void test_incrementstring( void )
 
         int i = 0;
 
+#ifdef DEBUG_ON
         puts( "Testing incrementstring():\n" );
+#endif
 
         while ( test_cases[i] != NULL ) {
                 char buffer[10];
